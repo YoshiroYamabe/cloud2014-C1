@@ -8,21 +8,11 @@ Cloudocs::Application.routes.draw do
   get "editor/edit/:id" => "editor#edit"
   post "editor/create"
   post "editor/save/:id" => "editor#save"
-  get "api/get_file"
+  post "api/get_file" => "api#get_file"
   get "api/payload"
   post "api/payload" => "api#payload"
   resource :session
   resource :users
-
-
-
-
-  namespace :admin do
-    root to: "top#index"
-    resources :users
-    resources :session
-    resources :editor
-  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
