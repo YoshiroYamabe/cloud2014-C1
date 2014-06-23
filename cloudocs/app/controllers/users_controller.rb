@@ -5,7 +5,7 @@ skip_before_filter :login_required
     end  
   
     def create  
-    	attr = params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    	attr = params.require(:user).permit(:name, :email, :password, :password_confirmation, :administrator, :createvalid)
 	@user = User.create(attr)
     	if @user.save  
       		redirect_to root_path, :notice => "Signed up!"  
